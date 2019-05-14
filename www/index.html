@@ -27,27 +27,32 @@
 
 </head>
 <body>
-  <div class="container">
+  <div class="container"> <!-- Inicio da Container -->
 
-    <ons-splitter>
+    <ons-splitter><!-- Início das abas do botão menu -->
         <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
           <ons-page>
             <ons-list>
+              <!-- Aba página inicial -->
               <ons-list-item onclick="fn.load('home.html')" tappable>
                 Pagina inicial
               </ons-list-item>
+              <!-- Aba página cadastrar -->
               <ons-list-item onclick="fn.load('add.html')" tappable>
                 Cadastrar
               </ons-list-item>
+
             </ons-list>
           </ons-page>
         </ons-splitter-side>
       <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-    </ons-splitter>
-
+    </ons-splitter><!-- Fim das abas do botão menu -->
+    
+    <!-- Inicio da página inicial -->
     <template id="home.html">
       <ons-page>
-        <ons-toolbar>
+
+        <ons-toolbar><!-- InÍcio da barra de ferramentas -->
           <div class="left">
             <ons-toolbar-button onclick="fn.open()">
               <ons-icon icon="md-menu"></ons-icon>
@@ -56,23 +61,30 @@
           <div class="center">
             Barcode Scanner
           </div>
-        </ons-toolbar>
-        
-          <!-- <ons-list>
+        </ons-toolbar><!-- Fim da barra de ferramentas -->
+
+        <!-- Lista de itens -->
+        <ons-list>
             <ons-list-header>Produtos cadastrados</ons-list-header>
             <ons-list-item>Item A</ons-list-item>
             <ons-list-item>Item B</ons-list-item>
-          </ons-list> -->
-
-          <ons-fab position="bottom right">
+        </ons-list>
+        
+        <!-- Botão para cadastrar produto -->
+        <ons-fab position="bottom right">
             <ons-icon icon="md-plus" onclick="fn.load('add.html')"></ons-icon>
-          </ons-fab>
-      </ons-page>
-    </template>
+        </ons-fab>
 
+      </ons-page>
+    </template><!-- Fim da página inicial -->
+
+    <!-- Inicio da página de cadastro -->
     <template id="add.html">
-      <ons-page>
-        <ons-toolbar>
+
+      <!-- Inicio do conteúdo página de cadastro -->
+      <ons-page> 
+
+        <ons-toolbar><!-- InÍcio da barra de ferramentas -->
           <div class="left">
             <ons-toolbar-button onclick="fn.open()">
               <ons-icon icon="md-menu"></ons-icon>
@@ -81,31 +93,28 @@
           <div class="center">
             Cadastrar produtos
           </div>
-        </ons-toolbar>
-        <p>
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="form-group">
-                <label>Produto</label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-          </div>
-        </p>
-          <!-- <div style="text-align: center; margin-top: 30px;">
+        </ons-toolbar><!-- Fim da barra de ferramentas -->     
+
+        <div style="text-align: center; margin-top: 30px;">
             <p>
+              <!-- Input código -->
               <ons-input id="codigo" modifier="underbar" type="number" placeholder="Código" float></ons-input>
             </p>
             <p>
+              <!-- Input nome do produto -->
               <ons-input id="produto" modifier="underbar" placeholder="Nome do produto" float></ons-input>
             </p>           
             <p style="margin-top: 30px;">
+              <!-- Botão cadastrar -->
               <ons-button onclick="cadastrar()">Cadastrar</ons-button>
             </p>
-          </div> -->
-      </ons-page>
-    </template>
+        </div>
+          
+      </ons-page> 
+      <!-- Fim do conteúdo página de cadastro -->
 
-  </div>
+    </template> <!-- Fim da página de cadastro -->
+
+  </div> <!-- Fim da Container -->
 </body>
 </html>
