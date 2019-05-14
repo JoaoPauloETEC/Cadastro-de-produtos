@@ -1,0 +1,129 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <link rel="stylesheet" href="components/loader.css">
+  <script src="components/loader.js"></script>
+
+  <!-- Codigo JQuery -->
+  <script src="components/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script src="components/acao.js"></script>
+
+  <!-- Codigo Onsen -->
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  
+ <!-- CSS da aplicacao -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+  <div class="container">
+
+    <ons-splitter>
+        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+          <ons-page>
+            <ons-list>
+              <ons-list-item onclick="fn.load('home.html')" tappable>
+                Pagina inicial
+              </ons-list-item>
+              <ons-list-item onclick="fn.load('add.html')" tappable>
+                Cadastrar
+              </ons-list-item>
+              <ons-list-item onclick="fn.load('about.html')" tappable>
+                About
+              </ons-list-item>
+            </ons-list>
+          </ons-page>
+        </ons-splitter-side>
+      <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+    </ons-splitter>
+
+    <template id="home.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            Barcode Scanner
+          </div>
+        </ons-toolbar>
+        
+          <!-- <ons-list>
+            <ons-list-header>Produtos cadastrados</ons-list-header>
+            <ons-list-item>Item A</ons-list-item>
+            <ons-list-item>Item B</ons-list-item>
+          </ons-list> -->
+
+          <ons-fab position="bottom right">
+            <ons-icon icon="md-plus" onclick="fn.load('add.html')"></ons-icon>
+          </ons-fab>
+      </ons-page>
+    </template>
+
+    <template id="add.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            Cadastrar produtos
+          </div>
+        </ons-toolbar>
+        <p>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label>Produto</label>
+                <input class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+        </p>
+          <!-- <div style="text-align: center; margin-top: 30px;">
+            <p>
+              <ons-input id="codigo" modifier="underbar" type="number" placeholder="Código" float></ons-input>
+            </p>
+            <p>
+              <ons-input id="produto" modifier="underbar" placeholder="Nome do produto" float></ons-input>
+            </p>           
+            <p style="margin-top: 30px;">
+              <ons-button onclick="cadastrar()">Cadastrar</ons-button>
+            </p>
+          </div> -->
+      </ons-page>
+    </template>
+
+    <template id="about.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            About
+          </div>
+        </ons-toolbar>
+      </ons-page>
+    </template>
+
+  </div>
+</body>
+</html>
